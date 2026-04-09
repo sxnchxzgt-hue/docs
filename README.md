@@ -42,4 +42,36 @@ The Bazaar system is organized into four main parts:
 
 ---
 
+# Team Git Workflow 
+
+## Branch Strategy
+
+The project follows a structured branching strategy:
+
+### Main Branches
+
+#### main
+- Production-ready
+- Deployed
+- Verified in production
+- Safe for demos
+
+#### dev
+- Features that are working but not yet production-ready
+- Integrated development branch
+- Must pass CI tests before merging
+
+### Feature Branches
+
+- Created from `dev`
+- Used for developing new features
+- Merged into `dev` via Pull Request
+
+Before merging to `dev`:
+
+- Feature works locally
+- Tests pass in GitHub Actions
+- Pull request reviewed
+- No breaking changes
+
 ---
