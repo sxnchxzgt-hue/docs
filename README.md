@@ -122,7 +122,7 @@ This temporary workflow will remain in place **until Issue #48 is closed**.
 
 ## Checkpoint 2 - Initial Security Approach
 
-A dedicated card will be created for **Checkpoint 2** to address security concerns.
+A dedicated card will be created for **Checkpoint 3** to address security concerns.
 
 ### Initial Approach
 
