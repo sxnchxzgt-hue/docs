@@ -185,7 +185,42 @@ Bucket: `product_bazaar/oficial/`
 | 62 | Marketplace Smart Watch | `oficial/Marketplace%20Smart%20Watch.jpg` | ✅ en SQL |
 | 63 | Marketplace Archived Item (inactivo) | `oficial/Zapatillas%20Running%20Pro.webp` | ✅ en SQL |
 
-**23/23 productos con imagen real**
+#### Nuevos productos (IDs 21–50)
+
+| ID | Producto | Estado |
+|----|----------|--------|
+| 21 | iPhone 15 Pro 256GB | ✅ en SQL |
+| 22 | Tablet Samsung Galaxy Tab A9 | ✅ en SQL |
+| 23 | Powerbank 20000mAh Carga Rapida | ✅ en SQL |
+| 24 | Remera Polo Clasica | ✅ en SQL |
+| 25 | Pantalon Chino Slim Fit | ✅ en SQL |
+| 26 | Campera Impermeable Windbreaker | ✅ en SQL |
+| 27 | Set de Sabanas Queen Premium | ✅ en SQL |
+| 28 | Organizador de Escritorio Bambu | ✅ en SQL |
+| 29 | Espejo Decorativo Marco Dorado | ✅ en SQL |
+| 30 | Set de Pinceles de Maquillaje | ✅ en SQL |
+| 31 | Serum Vitamina C 30ml | ✅ en SQL |
+| 32 | Protector Solar FPS 50 100ml | ✅ en SQL |
+| 33 | Set LEGO Creator 500 piezas | ✅ en SQL |
+| 34 | Muneca Interactiva con Accesorios | ✅ en SQL |
+| 35 | Bicicleta Infantil Rodado 16 | ✅ en SQL |
+| 36 | Pelota de Futbol Profesional | ✅ en SQL |
+| 37 | Bicicleta de Montana 26" | ✅ en SQL |
+| 38 | Soga para Saltar Profesional | ✅ en SQL |
+| 39 | Monitor Curvo 27" Full HD | ✅ en SQL |
+| 40 | Auriculares Gaming con Microfono | ✅ en SQL |
+| 41 | Webcam Full HD 1080p | ✅ en SQL |
+| 42 | Freidora de Aire 5.5L Digital | ✅ en SQL |
+| 43 | Cafetera de Capsulas Express | ✅ en SQL |
+| 44 | Aspiradora Robot con Mapeado | ✅ en SQL |
+| 45 | Camara de Reversa Inalambrica | ✅ en SQL |
+| 46 | Compresor de Aire Portatil 12V | ✅ en SQL |
+| 47 | Alfombras Universales para Auto | ✅ en SQL |
+| 48 | Cama Ortopedica para Perro L | ✅ en SQL |
+| 49 | Rascador para Gatos Torre | ✅ en SQL |
+| 50 | Correa Retractil 5 Metros | ✅ en SQL |
+
+**53/53 productos con imagen real ✅**
 
 ### Cómo agregar una imagen nueva
 

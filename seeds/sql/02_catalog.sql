@@ -52,6 +52,85 @@ INSERT INTO products (id, name, description, price, stock, main_image, rating, c
 (63, 'Marketplace Archived Item', 'Producto inactivo para validar filtrado de estado', 59.99, 12, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Zapatillas%20Running%20Pro.webp', 4.1, 1, false, '550e8400-e29b-41d4-a716-446655440007', '2026-04-30 15:00:00', 1)
 ON CONFLICT (id) DO UPDATE SET seller_id = EXCLUDED.seller_id, created_at = EXCLUDED.created_at, reviews_count = EXCLUDED.reviews_count;
 
+-- ─── Productos adicionales (IDs 21–50) ──────────────────────────────────────
+
+INSERT INTO products (id, name, description, price, stock, main_image, rating, category_id, is_active, seller_id, created_at, reviews_count) VALUES
+-- 📱 Electrónica y Tecnología
+(21, 'iPhone 15 Pro 256GB',           'Smartphone Apple con chip A17 Pro, camara de 48MP, USB-C y titanio',                                      999.99,  15, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/iPhone%2015%20Pro%20256GB.jpg',             4.9, 1, true,  '550e8400-e29b-41d4-a716-446655440001', '2026-03-15 10:00:00', 89),
+(22, 'Tablet Samsung Galaxy Tab A9',  'Tablet 10.5" con pantalla LCD, 64GB, WiFi, ideal para entretenimiento y trabajo',                          349.99,  28, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Tablet%20Samsung%20Galaxy%20Tab%20A9.webp',             4.4, 1, true,  '550e8400-e29b-41d4-a716-446655440001', '2026-03-20 11:00:00', 45),
+(23, 'Powerbank 20000mAh Carga Rapida','Bateria portatil con carga rapida 22.5W, 2 puertos USB + USB-C, pantalla LED',                             39.99, 200, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Powerbank%2020000mAh%20Carga%20Rapida.webp',       4.3, 1, true,  '550e8400-e29b-41d4-a716-446655440001', '2026-04-01 09:00:00', 67),
+-- 👕 Ropa y Moda
+(24, 'Remera Polo Clasica',           'Remera estilo polo 100% algodon pique, disponible en 6 colores, tallas S-XXL',                              19.99, 150, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Remera%20Polo%20Clasica.webp',       4.2, 2, true,  '550e8400-e29b-41d4-a716-446655440002', '2026-02-10 08:00:00', 30),
+(25, 'Pantalon Chino Slim Fit',       'Pantalon casual slim fit, tela stretch comoda, colores neutros, tallas 28-38',                              49.99,  85, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Pantalon%20Chino%20Slim%20Fit.jpg',       4.5, 2, true,  '550e8400-e29b-41d4-a716-446655440002', '2026-02-15 09:00:00', 55),
+(26, 'Campera Impermeable Windbreaker','Campera cortaviento impermeable, capucha desmontable, tallas S-XL, varios colores',                         89.99,  40, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Campera%20Impermeable%20Windbreaker.webp',       4.7, 2, true,  '550e8400-e29b-41d4-a716-446655440002', '2026-03-05 10:00:00', 20),
+-- 🏠 Hogar y Decoración
+(27, 'Set de Sabanas Queen Premium',  'Juego de sabanas 4 piezas, microfibra suave 1800 hilos, lavable a maquina',                                  79.99,  60, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Set%20de%20Sabanas%20Queen%20Premium.webp', 4.6, 3, true,  '550e8400-e29b-41d4-a716-446655440003', '2026-02-20 08:30:00', 88),
+(28, 'Organizador de Escritorio Bambu','Organizador multi-compartimento de bambu natural, para lapiceros, papeles y accesorios',                    24.99, 120, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Organizador%20de%20Escritorio%20Bambu.webp',         4.1, 3, true,  '550e8400-e29b-41d4-a716-446655440003', '2026-03-10 11:00:00', 15),
+(29, 'Espejo Decorativo Marco Dorado', 'Espejo circular 60cm con marco dorado estilo minimalista, apto pared',                                      59.99,  35, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Espejo%20Decorativo%20Marco%20Dorado.jpg',         4.4, 3, true,  '550e8400-e29b-41d4-a716-446655440003', '2026-03-25 14:00:00', 22),
+-- 🧴 Belleza y Cuidado Personal
+(30, 'Set de Pinceles de Maquillaje', 'Set profesional de 15 pinceles con estuche, cerdas sinteticas suaves, lavables',                            29.99,  90, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Set%20de%20Pinceles%20de%20Maquillaje.webp',    4.5, 4, true,  '550e8400-e29b-41d4-a716-446655440004', '2026-02-05 10:00:00', 40),
+(31, 'Serum Vitamina C 30ml',         'Serum antioxidante con vitamina C al 15%, acido hialuronico y vitamina E, reafirma y unifica el tono',      44.99, 110, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Serum%20Vitamina%20C%2030ml.webp',    4.8, 4, true,  '550e8400-e29b-41d4-a716-446655440004', '2026-03-01 09:30:00', 75),
+(32, 'Protector Solar FPS 50 100ml',  'Protector solar de amplio espectro, formula oil-free, no deja residuo blanco, water resistant',              18.99, 200, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Protector%20Solar%20FPS%2050%20100ml.jpg',               4.3, 4, true,  '550e8400-e29b-41d4-a716-446655440004', '2026-03-18 08:00:00', 33),
+-- 🧸 Juguetes y Niños
+(33, 'Set LEGO Creator 500 piezas',   'Set de construccion LEGO con 500 piezas para crear 3 modelos distintos, edad recomendada +8 anos',           69.99,  45, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Set%20LEGO%20Creator%20500%20piezas.webp', 4.9, 5, true, '550e8400-e29b-41d4-a716-446655440005', '2026-01-20 10:00:00', 110),
+(34, 'Muneca Interactiva con Accesorios','Muneca que habla y canta, incluye set de ropa, peinados y accesorios, pilas incluidas, +3 anos',          39.99,  70, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Muneca%20Interactiva%20con%20Accesorios.jpg',           4.4, 5, true,  '550e8400-e29b-41d4-a716-446655440005', '2026-02-28 11:00:00', 28),
+(35, 'Bicicleta Infantil Rodado 16',  'Bicicleta para ninos 4-7 anos, con rueditas de apoyo desmontables, freno trasero y manillar ajustable',    129.99,  20, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Bicicleta%20Infantil%20Rodado%2016.webp', 4.6, 5, true, '550e8400-e29b-41d4-a716-446655440005', '2026-03-08 09:00:00', 18),
+-- 🏋️ Deportes y Fitness
+(36, 'Pelota de Futbol Profesional',  'Pelota de futbol tamano 5, cubierta de PU, costuras reforzadas, apta para cesped natural y sintetico',       34.99,  80, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Pelota%20de%20Futbol%20Profesional.webp',  4.5, 6, true,  '550e8400-e29b-41d4-a716-446655440006', '2026-02-01 08:00:00', 42),
+(37, 'Bicicleta de Montana 26"',      'Bicicleta MTB 21 velocidades, marco de aluminio, frenos de disco, horquilla delantera con suspension',      449.99,   8, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Bicicleta%20de%20Montana%2026.webp',   4.7, 6, true,  '550e8400-e29b-41d4-a716-446655440006', '2026-01-10 10:00:00', 12),
+(38, 'Soga para Saltar Profesional',  'Soga de crossfit con rodamientos de precision, cables de acero, mangos ergonomicos, largo ajustable',        14.99, 300, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Soga%20para%20Saltar%20Profesional.webp',  4.2, 6, true,  '550e8400-e29b-41d4-a716-446655440006', '2026-04-10 07:00:00', 25),
+-- 🖥️ Computación y Accesorios
+(39, 'Monitor Curvo 27" Full HD',     'Monitor LED curvo 1500R, 1920x1080, 75Hz, 5ms, con entrada HDMI y DisplayPort, compatible con VESA',        299.99,  22, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Monitor%20Curvo%2027%20Full%20HD.webp',       4.6, 7, true,  '550e8400-e29b-41d4-a716-446655440001', '2026-02-22 09:00:00', 35),
+(40, 'Auriculares Gaming con Microfono','Auriculares over-ear 7.1 virtual, iluminacion RGB, microfono flexible con cancelacion de ruido, USB',       59.99,  75, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Auriculares%20Gaming%20con%20Microfono.webp',   4.4, 7, true,  '550e8400-e29b-41d4-a716-446655440001', '2026-03-12 10:00:00', 48),
+(41, 'Webcam Full HD 1080p',          'Camara web con microfono integrado, enfoque automatico, compatible con Zoom/Teams/Meet, clip universal',      49.99,  95, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Webcam%20Full%20HD%201080p.webp',       4.3, 7, true,  '550e8400-e29b-41d4-a716-446655440001', '2026-03-28 11:30:00', 29),
+-- 🍳 Electrodomésticos
+(42, 'Freidora de Aire 5.5L Digital', 'Air fryer con pantalla digital, 8 programas preestablecidos, capacidad 5.5L, bajo consumo energetico',      119.99,  38, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Freidora%20de%20Aire%205.5L%20Digital.jpg',   4.8, 8, true,  '550e8400-e29b-41d4-a716-446655440003', '2026-01-25 08:00:00', 92),
+(43, 'Cafetera de Capsulas Express',  'Cafetera compatible con capsulas Nespresso, 19 bares de presion, deposito 0.6L, calentamiento en 25 seg',    89.99,  55, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Cafetera%20de%20Capsulas%20Express.jpg',   4.5, 8, true,  '550e8400-e29b-41d4-a716-446655440003', '2026-02-14 09:00:00', 61),
+(44, 'Aspiradora Robot con Mapeado',  'Aspiradora robotica con mapeo laser, navegacion inteligente, compatible con app y asistentes de voz',        249.99,  12, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Aspiradora%20Robot%20con%20Mapeado.webp',   4.6, 8, true,  '550e8400-e29b-41d4-a716-446655440003', '2026-03-03 14:00:00', 37),
+-- 🚗 Automotor y Herramientas
+(45, 'Camara de Reversa Inalambrica', 'Camara trasera HD 170° con vision nocturna, transmision inalambrica, compatible con radios Android/iPhone',  39.99,  60, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Camara%20de%20Reversa%20Inalambrica.webp', 4.3, 9, true, '550e8400-e29b-41d4-a716-446655440006', '2026-02-08 10:00:00', 18),
+(46, 'Compresor de Aire Portatil 12V','Inflador electrico portatil 150PSI, pantalla digital, corte automatico de presion, cable 3m, maletin',       54.99,  45, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Compresor%20de%20Aire%20Portatil%2012V.webp', 4.5, 9, true, '550e8400-e29b-41d4-a716-446655440006', '2026-03-14 09:30:00', 26),
+(47, 'Alfombras Universales para Auto','Set de 4 alfombras de goma impermeables, antideslizantes, lavables, ajuste universal',                       29.99,  90, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Alfombras%20Universales%20para%20Auto.webp', 4.1, 9, true, '550e8400-e29b-41d4-a716-446655440006', '2026-04-04 08:00:00', 11),
+-- 🐶 Mascotas
+(48, 'Cama Ortopedica para Perro L',  'Cama con relleno de espuma viscoelastica, funda lavable, tamano L (80x60cm), ideal para razas grandes',      54.99,  35, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Cama%20Ortopedica%20para%20Perro%20L.webp',  4.7, 10, true, '550e8400-e29b-41d4-a716-446655440003', '2026-02-18 10:00:00', 44),
+(49, 'Rascador para Gatos Torre',     'Torre rascador de 120cm con 3 niveles, cuerda de sisal, hamacas y juguetes colgantes, base estable',          79.99,  22, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Rascador%20para%20Gatos%20Torre.webp', 4.5, 10, true, '550e8400-e29b-41d4-a716-446655440003', '2026-03-22 11:00:00', 19),
+(50, 'Correa Retractil 5 Metros',     'Correa retractil hasta 25kg, cinta reflectante, freno de seguridad, ergonomica, disponible en 3 colores',     19.99, 150, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Correa%20Retractil%205%20Metros.webp',  4.2, 10, true, '550e8400-e29b-41d4-a716-446655440003', '2026-04-11 09:00:00', 31)
+ON CONFLICT (id) DO UPDATE SET seller_id = EXCLUDED.seller_id, created_at = EXCLUDED.created_at, reviews_count = EXCLUDED.reviews_count;
+
+-- Product images para productos 21-50
+INSERT INTO product_images (product_id, image_url) VALUES
+(21, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/iPhone%2015%20Pro%20256GB.jpg'),
+(22, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Tablet%20Samsung%20Galaxy%20Tab%20A9.webp'),
+(23, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Powerbank%2020000mAh%20Carga%20Rapida.webp'),
+(24, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Remera%20Polo%20Clasica.webp'),
+(25, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Pantalon%20Chino%20Slim%20Fit.jpg'),
+(26, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Campera%20Impermeable%20Windbreaker.webp'),
+(27, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Set%20de%20Sabanas%20Queen%20Premium.webp'),
+(28, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Organizador%20de%20Escritorio%20Bambu.webp'),
+(29, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Espejo%20Decorativo%20Marco%20Dorado.jpg'),
+(30, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Set%20de%20Pinceles%20de%20Maquillaje.webp'),
+(31, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Serum%20Vitamina%20C%2030ml.webp'),
+(32, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Protector%20Solar%20FPS%2050%20100ml.jpg'),
+(33, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Set%20LEGO%20Creator%20500%20piezas.webp'),
+(34, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Muneca%20Interactiva%20con%20Accesorios.jpg'),
+(35, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Bicicleta%20Infantil%20Rodado%2016.webp'),
+(36, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Pelota%20de%20Futbol%20Profesional.webp'),
+(37, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Bicicleta%20de%20Montana%2026.webp'),
+(38, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Soga%20para%20Saltar%20Profesional.webp'),
+(39, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Monitor%20Curvo%2027%20Full%20HD.webp'),
+(40, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Auriculares%20Gaming%20con%20Microfono.webp'),
+(41, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Webcam%20Full%20HD%201080p.webp'),
+(42, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Freidora%20de%20Aire%205.5L%20Digital.jpg'),
+(43, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Cafetera%20de%20Capsulas%20Express.jpg'),
+(44, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Aspiradora%20Robot%20con%20Mapeado.webp'),
+(45, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Camara%20de%20Reversa%20Inalambrica.webp'),
+(46, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Compresor%20de%20Aire%20Portatil%2012V.webp'),
+(47, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Alfombras%20Universales%20para%20Auto.webp'),
+(48, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Cama%20Ortopedica%20para%20Perro%20L.webp'),
+(49, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Rascador%20para%20Gatos%20Torre.webp'),
+(50, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Correa%20Retractil%205%20Metros.webp')
+ON CONFLICT DO NOTHING;
+
 -- Insert product images
 INSERT INTO product_images (product_id, image_url) VALUES
 (1, 'https://sgfjfdeuftwaopaodzar.supabase.co/storage/v1/object/public/product_bazaar/oficial/Samsung%20Galaxy%20A54.png'),
