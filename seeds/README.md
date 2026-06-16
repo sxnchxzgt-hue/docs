@@ -89,15 +89,15 @@ Cada servicio tiene su propio `scripts/seed-database.sh` que aplica su SQL local
 | Comprador | `cccccccc-...-cccccccccc01` | laura.mendez@example.com |
 | Comprador | `cccccccc-...-cccccccccc02` | carlos.herrera@example.com |
 | Comprador | `cccccccc-...-cccccccccc03` | maria.garcia@example.com |
-| Vendedor | `550e8400-...-446655440001` | tech.seller@example.com |
-| Vendedor | `550e8400-...-446655440002` | fashion.seller@example.com |
-| Vendedor | `550e8400-...-446655440003` | home.living.seller@example.com |
-| Vendedor | `550e8400-...-446655440004` | beauty.seller@example.com |
-| Vendedor | `550e8400-...-446655440005` | kids.world.seller@example.com |
-| Vendedor | `550e8400-...-446655440006` | sports.gear@example.com |
-| Vendedor | `550e8400-...-446655440007` | marketplace.seller@example.com |
-| Vendedor vacío | `eeeeeeee-...-eeeeeeeeeeee` | empty.seller@example.com |
-| Vendedor bloqueado | `bbbbbbbb-...-bbbbbbbbbbbb` | blocked.seller@example.com |
+| Vendedor | `550e8400-...-446655440001` | TecnoShop BA |
+| Vendedor | `550e8400-...-446655440002` | Moda Porteña |
+| Vendedor | `550e8400-...-446655440003` | Casa & Deco |
+| Vendedor | `550e8400-...-446655440004` | Bella Natura |
+| Vendedor | `550e8400-...-446655440005` | El Mundo del Niño |
+| Vendedor | `550e8400-...-446655440006` | SportZone Pro |
+| Vendedor | `550e8400-...-446655440007` | Bazar del Centro |
+| Vendedor vacío | `eeeeeeee-...-eeeeeeeeeeee` | Tienda Nueva |
+| Vendedor bloqueado | `bbbbbbbb-...-bbbbbbbbbbbb` | Outlet Express |
 
 ### Productos (02_catalog.sql)
 
