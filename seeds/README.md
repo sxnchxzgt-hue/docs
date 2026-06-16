@@ -150,60 +150,48 @@ Cada servicio tiene su propio `scripts/seed-database.sh` que aplica su SQL local
 
 ---
 
-## Imágenes necesarias en Supabase
+## Imágenes de productos en Supabase
 
 > **Las fotos de perfil de usuarios NO se seedean por SQL** — el campo `photo` en UserService
 > es `BYTEA` (binario) y se sube a través de la API. Solo se necesitan imágenes de **productos**.
 
-### Bucket recomendado: `product_bazaar`
+Bucket: `product_bazaar/oficial/`
 
-Subir una imagen por producto al bucket de Supabase y reemplazar las URLs en
-`sql/02_catalog.sql` antes de ejecutar el seed. Las URLs tienen el formato:
-```
-https://<project>.supabase.co/storage/v1/object/public/product_bazaar/<nombre>.png
-```
+### Estado actual de imágenes
 
-### Lista de imágenes de productos a subir
+| ID | Producto | Imagen | Estado |
+|----|----------|--------|--------|
+| 1 | Samsung Galaxy A54 | `oficial/Samsung%20Galaxy%20A54.png` | ✅ en SQL |
+| 2 | Auriculares Sony WH-CH720 | `oficial/Auriculares%20Sony%20WH-CH720.jpg` | ✅ en SQL |
+| 3 | Camiseta Básica Premium (inactivo) | `oficial/Camiseta%20Basica%20Premium.webp` | ✅ en SQL |
+| 4 | Zapatillas Running Pro | `oficial/Zapatillas%20Running%20Pro.webp` | ✅ en SQL |
+| 5 | Lámpara LED de Piso | `oficial/Lampara%20LED%20de%20Piso.jpg` | ✅ en SQL |
+| 6 | Almohada Premium Memory Foam | `oficial/Almohada%20Premium%20Memory%20Foam.jpg` | ✅ en SQL |
+| 7 | Crema Facial Hidratante | `oficial/Crema%20Facial%20Hidratante.webp` | ✅ en SQL |
+| 8 | Perfume Essence | `oficial/Perfume%20Essence.jpg` | ✅ en SQL |
+| 9 | Juego de Construcción 1000 piezas | `oficial/Juego%20de%20ConstrucciOn%201000%20piezas.webp` | ✅ en SQL |
+| 10 | Andador para Bebé | `oficial/Andador%20para%20Bebe.png` | ✅ en SQL |
+| 11 | Mancuernas Ajustables 20kg | `oficial/Mancuernas%20Ajustables%2020kg.webp` | ✅ en SQL |
+| 12 | Colchoneta Yoga Premium | `oficial/Colchoneta%20Yoga%20Premium.webp` | ✅ en SQL |
+| 13 | Teclado Mecánico RGB | `oficial/Teclado%20Mecanico%20RGB.jpg` | ✅ en SQL |
+| 14 | Mouse Inalámbrico Pro | `oficial/Mouse%20Inalambrico%20Pro.png` | ✅ en SQL |
+| 15 | Licuadora Digital 2000W | `oficial/Licuadora%20Digital%202000W.jpg` | ✅ en SQL |
+| 16 | Microondas Inteligente | `oficial/Microondas%20Inteligente.webp` | ✅ en SQL |
+| 17 | Kit de Herramientas 20 piezas | `oficial/Kit%20de%20Herramientas%2020%20piezas.webp` | ✅ en SQL |
+| 18 | Pedal de Acelerador Deportivo | `oficial/Pedal%20de%20Acelerador%20Deportivo.webp` | ✅ en SQL |
+| 19 | Comida Premium para Perros | `oficial/Comida%20Premium%20para%20Perros.webp` | ✅ en SQL |
+| 20 | Juguete Interactivo para Perro | `oficial/Juguete%20Interactivo%20para%20Perro.webp` | ✅ en SQL |
+| 61 | Marketplace Headphones Pro | `oficial/Marketplace%20Headphones%20Pro.jpg` | ✅ en SQL |
+| 62 | Marketplace Smart Watch | `oficial/Marketplace%20Smart%20Watch.jpg` | ✅ en SQL |
+| 63 | Marketplace Archived Item (inactivo) | `oficial/Zapatillas%20Running%20Pro.webp` | ✅ en SQL |
 
-| Nombre de archivo sugerido | Producto | ID |
-|---------------------------|----------|----|
-| `samsung-galaxy-a54.png` | Samsung Galaxy A54 | 1 |
-| `auriculares-sony-wh720.png` | Auriculares Sony WH-CH720 | 2 |
-| `camiseta-basica.png` | Camiseta Básica Premium | 3 |
-| `zapatillas-running.png` | Zapatillas Running Pro | 4 |
-| `lampara-led-piso.png` | Lámpara LED de Piso | 5 |
-| `almohada-memory-foam.png` | Almohada Premium Memory Foam | 6 |
-| `crema-facial.png` | Crema Facial Hidratante | 7 |
-| `perfume-essence.png` | Perfume Essence | 8 |
-| `juego-construccion.png` | Juego de Construcción 1000 piezas | 9 |
-| `andador-bebe.png` | Andador para Bebé | 10 |
-| `mancuernas-ajustables.png` | Mancuernas Ajustables 20kg | 11 |
-| `colchoneta-yoga.png` | Colchoneta Yoga Premium | 12 |
-| `teclado-mecanico-rgb.png` | Teclado Mecánico RGB | 13 |
-| `mouse-inalambrico.png` | Mouse Inalámbrico Pro | 14 |
-| `licuadora-digital.png` | Licuadora Digital 2000W | 15 |
-| `microondas-inteligente.png` | Microondas Inteligente | 16 |
-| `kit-herramientas.png` | Kit de Herramientas 20 piezas | 17 |
-| `pedal-deportivo.png` | Pedal de Acelerador Deportivo | 18 |
-| `comida-perros.png` | Comida Premium para Perros | 19 |
-| `juguete-perro.png` | Juguete Interactivo para Perro | 20 |
-| `headphones-pro.png` | Marketplace Headphones Pro | 61 |
-| `smart-watch.png` | Marketplace Smart Watch | 62 |
-| `archived-item.png` | Marketplace Archived Item | 63 |
+**23/23 productos con imagen real**
 
-**Total: 23 imágenes**
+### Cómo agregar una imagen nueva
 
-### Cómo actualizar las URLs en el SQL
-
-Una vez tengas los links de Supabase, reemplazá el placeholder en `sql/02_catalog.sql`.
-Si todas las URLs siguen el patrón `product_bazaar/<nombre>.png`, podés hacer un reemplazo
-masivo con el editor o con:
-
-```bash
-# Ejemplo: reemplazar solo el placeholder genérico dejando las URLs reales intactas
-sed -i "s|product_bazaar/zapatillas.png|product_bazaar/samsung-galaxy-a54.png|g" sql/02_catalog.sql
-# (repetir por cada producto o editar el archivo directamente)
-```
+1. Subir el archivo a Supabase en el bucket `product_bazaar`, carpeta `oficial/`
+2. Editar `sql/02_catalog.sql`: reemplazar la URL del producto en el INSERT de `products` y en el INSERT de `product_images`
+3. Ejecutar el seed (es idempotente — el `ON CONFLICT DO UPDATE` actualizará la imagen)
 
 ---
 
