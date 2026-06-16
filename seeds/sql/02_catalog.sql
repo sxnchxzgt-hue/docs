@@ -219,5 +219,35 @@ VALUES
     (11, '11111111-1111-1111-1111-111111111106',
      'cccccccc-cccc-cccc-cccc-cccccccccc01',
      5, 'Calidad top, el sistema de ajuste funciona perfecto.',
-     '2026-06-05 16:30:00')
+     '2026-06-05 16:30:00'),
+
+    -- Carlos reseña Crema Facial (orden 107)
+    (7, '11111111-1111-1111-1111-111111111107',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     5, 'Hidrata muy bien y se absorbe rapido, sin sensacion grasosa.',
+     '2026-05-31 09:00:00'),
+
+    -- Carlos reseña Perfume Essence (orden 107)
+    (8, '11111111-1111-1111-1111-111111111107',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'Aroma agradable y buena duracion en piel, el frasco es muy elegante.',
+     '2026-05-31 09:20:00'),
+
+    -- María reseña Juego de Construcción (orden 108)
+    (9, '11111111-1111-1111-1111-111111111108',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'A mis hijos les encanto, piezas de muy buena calidad y bien prolijo el armado.',
+     '2026-06-08 10:00:00'),
+
+    -- Laura reseña Teclado Mecánico RGB (orden 101, producto adicional)
+    (13, '11111111-1111-1111-1111-111111111101',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'El mejor teclado que tuve, las teclas tienen un tacto increible.',
+     '2026-05-15 11:00:00'),
+
+    -- Carlos reseña Colchoneta Yoga (orden 102, producto adicional)
+    (12, '11111111-1111-1111-1111-111111111102',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'Buena densidad, no se desliza en el piso. Le faltaria ser un poco mas gruesa.',
+     '2026-05-23 08:30:00')
 ON CONFLICT (product_id, order_id) DO NOTHING;

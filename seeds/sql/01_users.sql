@@ -110,7 +110,28 @@ VALUES
      '11111111-1111-1111-1111-111111111106',
      'cccccccc-cccc-cccc-cccc-cccccccccc01',
      5, 'Las mancuernas son de muy buena calidad, volvería a comprar.',
-     '2026-06-05 16:00:00')
+     '2026-06-05 16:00:00'),
+
+    -- Carlos reseña beauty.seller (orden 107)
+    ('550e8400-e29b-41d4-a716-446655440004',
+     '11111111-1111-1111-1111-111111111107',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     5, 'Productos de belleza de primera calidad, embalaje cuidado y envío rápido.',
+     '2026-05-31 09:30:00'),
+
+    -- María reseña kids.world.seller (orden 108)
+    ('550e8400-e29b-41d4-a716-446655440005',
+     '11111111-1111-1111-1111-111111111108',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'El juguete llegó perfectamente embalado y antes de lo esperado. Muy recomendable.',
+     '2026-06-08 10:30:00'),
+
+    -- María reseña home.living.seller (orden 103, segunda reseña)
+    ('550e8400-e29b-41d4-a716-446655440003',
+     '11111111-1111-1111-1111-111111111108',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     4, 'Buen vendedor, aunque la entrega demoró un par de días más de lo prometido.',
+     '2026-06-08 11:00:00')
 ON CONFLICT (seller_id, order_id) DO NOTHING;
 
 -- ─── Actualizar rating y reviews_count de vendedores ─────────────────────────
@@ -121,8 +142,14 @@ WHERE auth0_id = '550e8400-e29b-41d4-a716-446655440001';
 UPDATE users SET reviews_count = 1, rating = 4.0
 WHERE auth0_id = '550e8400-e29b-41d4-a716-446655440002';
 
-UPDATE users SET reviews_count = 1, rating = 3.0
+UPDATE users SET reviews_count = 2, rating = 3.5
 WHERE auth0_id = '550e8400-e29b-41d4-a716-446655440003';
 
 UPDATE users SET reviews_count = 1, rating = 5.0
 WHERE auth0_id = '550e8400-e29b-41d4-a716-446655440006';
+
+UPDATE users SET reviews_count = 1, rating = 5.0
+WHERE auth0_id = '550e8400-e29b-41d4-a716-446655440004';
+
+UPDATE users SET reviews_count = 1, rating = 5.0
+WHERE auth0_id = '550e8400-e29b-41d4-a716-446655440005';

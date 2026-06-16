@@ -77,7 +77,23 @@ VALUES
      'delivered', 69.99,
      'Av. Corrientes 1234, Buenos Aires, Argentina',
      'idem-006', 0,
-     '2026-06-01 08:00:00', '2026-06-04 20:00:00')
+     '2026-06-01 08:00:00', '2026-06-04 20:00:00'),
+
+    -- Carlos: orden belleza entregada
+    ('11111111-1111-1111-1111-111111111107',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     'delivered', 84.98,
+     'Calle Florida 456, Córdoba, Argentina',
+     'idem-007', 0,
+     '2026-05-25 10:00:00', '2026-05-30 18:00:00'),
+
+    -- María: orden juguetes entregada
+    ('11111111-1111-1111-1111-111111111108',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     'delivered', 39.99,
+     'San Martín 789, Rosario, Argentina',
+     'idem-008', 0,
+     '2026-06-03 14:00:00', '2026-06-07 17:00:00')
 ON CONFLICT (id) DO NOTHING;
 
 -- Asociar cupón a la orden de Laura
@@ -119,7 +135,20 @@ VALUES
     -- Orden 106: Mancuernas Ajustables (entregada - Laura)
     ('11111111-1111-1111-1111-111111111106',
      11, 'Mancuernas Ajustables 20kg', 1, 69.99, 69.99,
-     '550e8400-e29b-41d4-a716-446655440006')
+     '550e8400-e29b-41d4-a716-446655440006'),
+
+    -- Orden 107: Crema Facial + Perfume Essence (entregada - Carlos)
+    ('11111111-1111-1111-1111-111111111107',
+     7, 'Crema Facial Hidratante', 1, 34.99, 34.99,
+     '550e8400-e29b-41d4-a716-446655440004'),
+    ('11111111-1111-1111-1111-111111111107',
+     8, 'Perfume Essence', 1, 49.99, 49.99,
+     '550e8400-e29b-41d4-a716-446655440004'),
+
+    -- Orden 108: Juego de Construcción (entregada - María)
+    ('11111111-1111-1111-1111-111111111108',
+     9, 'Juego de Construcción 1000 piezas', 1, 39.99, 39.99,
+     '550e8400-e29b-41d4-a716-446655440005')
 ON CONFLICT DO NOTHING;
 
 -- ─── Historial de estados ────────────────────────────────────────────────────
@@ -152,5 +181,17 @@ VALUES
     ('11111111-1111-1111-1111-111111111106', 'pending_payment',  NULL,         '2026-06-01 08:00:00'),
     ('11111111-1111-1111-1111-111111111106', 'confirmed',        NULL,         '2026-06-01 09:00:00'),
     ('11111111-1111-1111-1111-111111111106', 'shipped',          'AR111222333', '2026-06-02 10:00:00'),
-    ('11111111-1111-1111-1111-111111111106', 'delivered',        NULL,         '2026-06-04 20:00:00')
+    ('11111111-1111-1111-1111-111111111106', 'delivered',        NULL,         '2026-06-04 20:00:00'),
+
+    -- Orden 107: pending → confirmed → shipped → delivered
+    ('11111111-1111-1111-1111-111111111107', 'pending_payment',  NULL,         '2026-05-25 10:00:00'),
+    ('11111111-1111-1111-1111-111111111107', 'confirmed',        NULL,         '2026-05-25 11:00:00'),
+    ('11111111-1111-1111-1111-111111111107', 'shipped',          'AR444555666', '2026-05-26 09:00:00'),
+    ('11111111-1111-1111-1111-111111111107', 'delivered',        NULL,         '2026-05-30 18:00:00'),
+
+    -- Orden 108: pending → confirmed → shipped → delivered
+    ('11111111-1111-1111-1111-111111111108', 'pending_payment',  NULL,         '2026-06-03 14:00:00'),
+    ('11111111-1111-1111-1111-111111111108', 'confirmed',        NULL,         '2026-06-03 14:30:00'),
+    ('11111111-1111-1111-1111-111111111108', 'shipped',          'AR777888999', '2026-06-04 10:00:00'),
+    ('11111111-1111-1111-1111-111111111108', 'delivered',        NULL,         '2026-06-07 17:00:00')
 ON CONFLICT DO NOTHING;
