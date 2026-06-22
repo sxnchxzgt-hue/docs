@@ -36,7 +36,22 @@ VALUES
      'Tienda recién abierta, sin productos cargados todavía.', 4.3),
     ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
      'Outlet Express', 'outlet.express@example.com',
-     'Cuenta suspendida por incumplimiento de políticas de la plataforma.', 3.0)
+     'Cuenta suspendida por incumplimiento de políticas de la plataforma.', 3.0),
+    ('550e8400-e29b-41d4-a716-446655440008',
+     'Patitas & Co', 'patitas.co@example.com',
+     'Accesorios de moda para mascotas: bolsos, mochilas, correas y más. Porque tu perrito merece viajar con estilo.', 4.7),
+    ('550e8400-e29b-41d4-a716-446655440009',
+     'Cerámica Dulce', 'ceramica.dulce@example.com',
+     'Artesanías y cerámica pintada a mano. Calendarios perpetuos, vajilla y objetos decorativos únicos, hechos con amor.', 4.8),
+    ('550e8400-e29b-41d4-a716-446655440010',
+     'Teje & Diseña', 'teje.disena@example.com',
+     'Ropa y accesorios tejidos artesanalmente. Sweaters, bolsos, deco para el hogar. Todo hecho a mano con materiales seleccionados.', 4.6),
+    ('550e8400-e29b-41d4-a716-446655440011',
+     'FitLife Pro', 'fitlife.pro@example.com',
+     'Equipamiento de fitness para todos los niveles. Desde sogas de salto hasta bicicletas estáticas. Tu gym en casa.', 4.5),
+    ('550e8400-e29b-41d4-a716-446655440012',
+     'KawaiiTech', 'kawaii.tech@example.com',
+     'Accesorios tech con diseños kawaii. Mouse, soportes y accesorios que hacen de tu escritorio el lugar más lindo del mundo.', 4.7)
 ON CONFLICT (auth0_id) DO UPDATE
 SET full_name   = EXCLUDED.full_name,
     email       = EXCLUDED.email,
