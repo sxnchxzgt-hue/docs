@@ -250,5 +250,144 @@ VALUES
     (12, '11111111-1111-1111-1111-111111111102',
      'cccccccc-cccc-cccc-cccc-cccccccccc02',
      4, 'Buena densidad, no se desliza en el piso. Le faltaria ser un poco mas gruesa.',
-     '2026-05-23 08:30:00')
+     '2026-05-23 08:30:00'),
+
+    -- Laura reseña iPhone 15 Pro (orden 109)
+    (21, '11111111-1111-1111-1111-111111111109',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'Una bestia de teléfono. La cámara es increíble y el titanio se siente premium.',
+     '2026-05-10 11:00:00'),
+
+    -- Carlos reseña Tablet Samsung (orden 109)
+    (22, '11111111-1111-1111-1111-111111111109',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'Muy fluida para ver contenido y trabajar. La pantalla podria tener mejor brillo en exteriores.',
+     '2026-05-10 11:30:00'),
+
+    -- María reseña Powerbank (orden 110)
+    (23, '11111111-1111-1111-1111-111111111110',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'Cargó mi celular 3 veces completas. La pantalla LED es muy útil para ver cuánta batería queda.',
+     '2026-05-18 14:00:00'),
+
+    -- Laura reseña Campera Windbreaker (orden 110)
+    (26, '11111111-1111-1111-1111-111111111110',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'Perfecta para el frio y la lluvia. La capucha ajusta bien y no entra viento.',
+     '2026-05-18 15:00:00'),
+
+    -- Carlos reseña Set de Sábanas (orden 111)
+    (27, '11111111-1111-1111-1111-111111111111',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'Suaves al tacto y no se arrugaron mucho después del lavado. Buen precio.',
+     '2026-05-25 09:00:00'),
+
+    -- María reseña Espejo Marco Dorado (orden 111)
+    (29, '11111111-1111-1111-1111-111111111111',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'Quedó hermoso en el living. El marco dorado le da un toque muy elegante.',
+     '2026-05-25 10:00:00'),
+
+    -- Laura reseña Sérum Vitamina C (orden 112)
+    (31, '11111111-1111-1111-1111-111111111112',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'Notei el cambio en el tono de mi piel en dos semanas. Se absorbe rapido y no deja sensacion pegajosa.',
+     '2026-06-01 08:30:00'),
+
+    -- Carlos reseña Protector Solar (orden 112)
+    (32, '11111111-1111-1111-1111-111111111112',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'Buena proteccion y no deja residuo blanco. Un poco caro para el tamaño del pomo.',
+     '2026-06-01 09:00:00'),
+
+    -- María reseña Set LEGO Creator (orden 113)
+    (33, '11111111-1111-1111-1111-111111111113',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'Mi hijo armó los 3 modelos. Las instrucciones son claras y las piezas de muy buena calidad.',
+     '2026-06-03 16:00:00'),
+
+    -- Laura reseña Bicicleta Infantil (orden 113)
+    (35, '11111111-1111-1111-1111-111111111113',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'Mi hija aprendio a andar en bici en dos dias. Las rueditas de apoyo se sacan facilmente.',
+     '2026-06-03 17:00:00'),
+
+    -- Carlos reseña Pelota de Fútbol (orden 114)
+    (36, '11111111-1111-1111-1111-111111111114',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     5, 'Muy buena pelota, aguanta bien el rebote y la costura es resistente. La uso en cancha de tierra.',
+     '2026-06-06 10:00:00'),
+
+    -- María reseña Soga para Saltar (orden 114)
+    (38, '11111111-1111-1111-1111-111111111114',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     4, 'Los rodamientos hacen que gire muy suave. Le doy 4 estrellas porque el largo minimo podria ser menor.',
+     '2026-06-06 10:30:00'),
+
+    -- Laura reseña Monitor Curvo (orden 115)
+    (39, '11111111-1111-1111-1111-111111111115',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'La curva se nota mucho jugando. Colores vivos y sin ghosting a 75Hz.',
+     '2026-06-09 12:00:00'),
+
+    -- Carlos reseña Auriculares Gaming (orden 115)
+    (40, '11111111-1111-1111-1111-111111111115',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'Sonido envolvente muy bueno. El microfono capta bien la voz sin mucho ruido de fondo.',
+     '2026-06-09 12:30:00'),
+
+    -- María reseña Freidora de Aire (orden 116)
+    (42, '11111111-1111-1111-1111-111111111116',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'Hago papas fritas sin aceite y quedan crocantes. Los 8 programas cubren todo lo que necesito.',
+     '2026-06-11 19:00:00'),
+
+    -- Laura reseña Cafetera de Cápsulas (orden 116)
+    (43, '11111111-1111-1111-1111-111111111116',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'El café queda con una crema perfecta. Calienta rapidisimo y ocupa poco espacio en la mesada.',
+     '2026-06-11 07:30:00'),
+
+    -- Carlos reseña Cámara de Reversa (orden 117)
+    (45, '11111111-1111-1111-1111-111111111117',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'La imagen es clara incluso de noche. La conexion inalambrica tarda un segundo en sincronizar al arrancar.',
+     '2026-06-13 18:00:00'),
+
+    -- María reseña Cama Ortopédica para Perro (orden 118)
+    (48, '11111111-1111-1111-1111-111111111118',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     5, 'Mi labrador la adoptó el primer día. La funda se saca y lava sin problemas.',
+     '2026-06-14 09:00:00'),
+
+    -- Laura reseña Rascador para Gatos (orden 118)
+    (49, '11111111-1111-1111-1111-111111111118',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'Mi gato ya no araña los muebles. Muy estable, no se cae aunque salte desde arriba.',
+     '2026-06-14 09:30:00'),
+
+    -- Carlos reseña Andador para Bebé (orden 119)
+    (10, '11111111-1111-1111-1111-111111111119',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     4, 'A mi sobrino le encanta la música y las luces. Facil de armar y bien seguro.',
+     '2026-06-15 11:00:00'),
+
+    -- María reseña Mouse Inalámbrico (orden 119)
+    (14, '11111111-1111-1111-1111-111111111119',
+     'cccccccc-cccc-cccc-cccc-cccccccccc03',
+     3, 'Funciona bien pero el scroll a veces salta. La bateria dura lo que dice.',
+     '2026-06-15 11:30:00'),
+
+    -- Laura reseña Licuadora Digital (orden 120)
+    (15, '11111111-1111-1111-1111-111111111120',
+     'cccccccc-cccc-cccc-cccc-cccccccccc01',
+     5, 'Tritura hielo sin problema. El vaso de vidrio es muy practico para llevar al trabajo.',
+     '2026-06-16 08:00:00'),
+
+    -- Carlos reseña Aspiradora Robot (orden 120)
+    (44, '11111111-1111-1111-1111-111111111120',
+     'cccccccc-cccc-cccc-cccc-cccccccccc02',
+     5, 'El mapeo es muy preciso, no se choca con nada. Desde la app se programa solo y avisa cuando terminó.',
+     '2026-06-16 20:00:00')
+
 ON CONFLICT (product_id, order_id) DO NOTHING;
