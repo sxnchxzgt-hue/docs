@@ -44,6 +44,10 @@ WL_USER=${WL_USER:-postgres}
 WL_PASS=${WL_PASS:-postgres}
 WL_DB=${WL_DB:-granbazaar_wishlist}
 
+# MetricsService (MongoDB)
+export MONGO_URI=${MONGO_URI:-mongodb://admin:secretpassword@localhost:27017}
+export MONGO_DB_NAME=${MONGO_DB_NAME:-metrics_db}
+
 # ─── Colores ──────────────────────────────────────────────────────────────────
 
 GREEN='\033[0;32m'
@@ -75,6 +79,27 @@ run_sql "UserService"           "$US_HOST" "$US_PORT" "$US_USER" "$US_PASS" "$US
 run_sql "CatalogService"        "$CS_HOST" "$CS_PORT" "$CS_USER" "$CS_PASS" "$CS_DB" "$SQL_DIR/02_catalog.sql"
 run_sql "CheckoutOrdersService" "$CO_HOST" "$CO_PORT" "$CO_USER" "$CO_PASS" "$CO_DB" "$SQL_DIR/03_checkout.sql"
 run_sql "WishListService"       "$WL_HOST" "$WL_PORT" "$WL_USER" "$WL_PASS" "$WL_DB" "$SQL_DIR/04_wishlist.sql"
+
+# ─── Ejecución del Seed de MongoDB (Entorno Aislado) ─────────────────────────
+
+MONGO_DIR="$SCRIPT_DIR/mongo"
+VENV_DIR="$MONGO_DIR/.venv"
+
+echo -e "${BLUE}▶ Preparando entorno de Python para MetricsService...${NC}"
+
+# Crear el entorno virtual e instalar dependencias si no existe
+if [ ! -d "$VENV_DIR" ]; then
+    echo -e "${YELLOW}  Creando entorno virtual en $VENV_DIR...${NC}"
+    python3 -m venv "$VENV_DIR"
+    
+    echo -e "${YELLOW}  Instalando dependencias (beanie, motor)...${NC}"
+    "$VENV_DIR/bin/pip" install --quiet -r "$MONGO_DIR/requirements.txt"
+fi
+
+echo -e "${BLUE}▶ Seeding MetricsService (MongoDB / Beanie)...${NC}"
+# Ejecutamos el script usando el python del entorno virtual aislado
+PYTHONPATH="$SCRIPT_DIR/.." "$VENV_DIR/bin/python3" "$MONGO_DIR/05_metrics_seed.py"
+echo -e "${GREEN}  ✓ MetricsService seeded${NC}"
 
 echo ""
 echo -e "${GREEN}✓ Todos los servicios seeded correctamente.${NC}"

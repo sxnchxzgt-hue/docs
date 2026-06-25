@@ -10,13 +10,15 @@ principales de la aplicación. Son **idempotentes**: se pueden ejecutar múltipl
 ```
 seeds/
 ├── README.md          ← este archivo
-├── seed-all.sh        ← script master (ejecuta los 4 seeds en orden)
+├── seed-all.sh        ← script master (ejecuta los 5 seeds en orden)
 ├── .env.example       ← variables de conexión
-└── sql/
-    ├── 01_users.sql       → UserService       (puerto 5432)
-    ├── 02_catalog.sql     → CatalogService    (puerto 5433)
-    ├── 03_checkout.sql    → CheckoutOrders    (puerto 5434)
-    └── 04_wishlist.sql    → WishListService   (puerto 5435)
+├── sql/
+│   ├── 01_users.sql       → UserService       (puerto 5432)
+│   ├── 02_catalog.sql     → CatalogService    (puerto 5433)
+│   ├── 03_checkout.sql    → CheckoutOrders    (puerto 5434)
+│   └── 04_wishlist.sql    → WishListService   (puerto 5435)
+└── mongo/
+    └── 05_metrics_seed.py → MetricsService    (puerto 8005 / MongoDB 27017)
 ```
 
 ---
@@ -28,9 +30,10 @@ seeds/
     └─► 02_catalog.sql   (products referencian seller_id de users)
             └─► 03_checkout.sql  (orders referencian product_id y buyer_id)
                     └─► 04_wishlist.sql  (product_id deben existir en catalog)
+                            └─► 05_metrics_seed.py (usa usuarios y productos existentes)
 ```
 
-Ejecutar siempre en ese orden. El script `seed-all.sh` lo hace automáticamente.
+Ejecutar siempre en ese orden. El script `seed-all.sh` lo hace automáticamente (para los seeds SQL).
 
 ---
 
@@ -262,6 +265,10 @@ WL_PORT=5435
 WL_USER=postgres
 WL_PASS=postgres
 WL_DB=granbazaar_wishlist
+
+# MetricsService (MongoDB)
+MONGO_URI=mongodb://admin:secretpassword@localhost:27017
+MONGO_DB_NAME=metrics_db
 ```
 
 ---
