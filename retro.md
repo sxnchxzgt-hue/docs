@@ -130,7 +130,7 @@ El flujo `feature → dev → staging → main` funcionó bien en la práctica. 
 
 ### CI como red de seguridad
 
-Haber invertido tiempo en los pipelines de CI desde el principio del proyecto pagó dividendos a lo largo de toda la cursada. La `main` nunca se rompió de forma imperceptible: cada fallo fue explícito y bloqueante. El episodio de agotamiento de minutos fue disruptivo, pero también demostró qué tan dependiente se había vuelto el equipo del CI — lo que es una señal positiva de que el proceso estaba arraigado.
+Haber invertido tiempo en los pipelines de CI desde el principio del proyecto pagó dividendos a lo largo de toda la cursada. La rama `main` nunca se rompió de forma imperceptible: cada fallo fue explícito y bloqueante. El episodio de agotamiento de minutos fue disruptivo, pero también demostró qué tan dependiente se había vuelto el equipo del CI — lo que es una señal positiva de que el proceso estaba arraigado.
 
 ### Deuda técnica
 
