@@ -174,28 +174,26 @@ async def seed_data() -> None:
     # 4. Generar Eventos de Producto: PRODUCT_CREATED para los 50 IDs en day_90_ago
     product_events: list[ProductMetricEvent] = []
     product_prices: dict[int, float] = {}
+    product_categories: dict[int, str] = {}
 
     for pid in range(1, 51):
         if pid == 1:
-            price = 299.99
-            name = "Samsung Galaxy A54"
+            price, name, cat = 299.99, "Samsung Galaxy A54", "Electrónica"
         elif pid == 2:
-            price = 79.99
-            name = "Auriculares Sony WH-CH720"
+            price, name, cat = 79.99, "Auriculares Sony WH-CH720", "Electrónica"
         elif pid == 3:
-            price = 24.99
-            name = "Camiseta Básica Premium"
+            price, name, cat = 24.99, "Camiseta Básica Premium", "Ropa"
         elif pid == 4:
-            price = 89.99
-            name = "Zapatillas Running Pro"
+            price, name, cat = 89.99, "Zapatillas Running Pro", "Ropa"
         elif pid == 5:
-            price = 45.99
-            name = "Lámpara LED de Piso"
+            price, name, cat = 45.99, "Lámpara LED de Piso", "Hogar"
         else:
             price = round(random.uniform(15.0, 450.0), 2)
             name = f"Producto Fake {pid}"
+            cat = random.choice(["Electrónica", "Ropa", "Hogar", "Belleza", "Juguetes", "Deportes", "Computación"])
 
         product_prices[pid] = price
+        product_categories[pid] = cat
         seller_id = real_sellers[(pid - 1) % len(real_sellers)]
 
         event = ProductMetricEvent(
@@ -206,6 +204,7 @@ async def seed_data() -> None:
             payload={
                 "name": name,
                 "price": price,
+                "category": cat,
                 "seller_id": seller_id,
                 "stock": random.randint(10, 100)
             }
@@ -251,18 +250,19 @@ async def seed_data() -> None:
             chosen_pids.append(pid)
 
         items: list[dict[str, Any]] = []
-        total_amount = 0.0
+        total_paid = 0.0
         for pid in chosen_pids:
             price = product_prices[pid]
             quantity = random.randint(1, 2)
             items.append({
                 "product_id": str(pid),
+                "category_id": product_categories[pid],
                 "price": price,
                 "quantity": quantity
             })
-            total_amount += price * quantity
+            total_paid += price * quantity
 
-        total_amount = round(total_amount, 2)
+        total_paid = round(total_paid, 2)
 
         created_event = OrderMetricEvent(
             event_type="ORDER_CREATED",
@@ -272,7 +272,7 @@ async def seed_data() -> None:
             payload={
                 "buyer_id": buyer_id,
                 "items": items,
-                "total_amount": total_amount
+                "total_paid": total_paid
             }
         )
         order_events_to_insert.append(created_event)
@@ -294,7 +294,8 @@ async def seed_data() -> None:
                 actor="system",
                 payload={
                     "buyer_id": buyer_id,
-                    "total_amount": total_amount
+                    "items": items,
+                    "total_paid": total_paid
                 }
             )
             order_events_to_insert.append(confirmed_event)
@@ -308,6 +309,7 @@ async def seed_data() -> None:
                     payload={
                         "quantity": item["quantity"],
                         "price": item["price"],
+                        "category": product_categories[int(item["product_id"])],
                         "order_id": order_id
                     }
                 )
@@ -329,7 +331,7 @@ async def seed_data() -> None:
                 payload={
                     "reason": random.choice(["buyer_cancelled", "payment_failed", "out_of_stock"]),
                     "buyer_id": buyer_id,
-                    "total_amount": total_amount
+                    "total_paid": total_paid
                 }
             )
             order_events_to_insert.append(cancelled_event)
