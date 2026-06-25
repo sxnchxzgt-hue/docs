@@ -14,6 +14,7 @@ The Bazaar system is organized into four main parts:
 
 - User Backend
 - API Gateway
+- Backend Metrics & Analytics
 - Frontend App
 - Frontend Backoffice
 
@@ -25,6 +26,7 @@ The Bazaar system is organized into four main parts:
 |------|------------|-------------|------------|
 | Backend Users | `UserService` | User microservice (authentication, profiles, accounts) | Go (Microservice) |
 | API Gateway | `ApiGateway` | Entry point to microservices | Go / API Gateway |
+| Backend Metrics | `MetricsService` | Core service for analytics and event-driven metrics (puerto 8005) | Python / FastAPI / MongoDB |
 | Frontend App | `BazaarApp` | Main user application | Web/Mobile Frontend |
 | Frontend Backoffice | `BazaarBackoffice` | Admin panel | Web Frontend |
 
