@@ -32,3 +32,9 @@ El workflow se divide en dos jobs. El primero (`build-push`) se autentica en GHC
 El despliegue propiamente dicho se resuelve con dos acciones de `appleboy`: una copia el `docker-compose.staging.yml` —y las migraciones, en los servicios que las tienen— mediante `scp`, y la otra accede por `ssh`, ejecuta `docker pull` y reinicia el servicio con `docker compose up -d --no-build`. El `--no-build` es determinante: en el VPS no se compila nada, sino que se descarga la imagen ya construida desde GHCR. Toda la información sensible —host, usuario, clave, puerto y path— se gestiona mediante secrets (`STAGING_VPS_*`), y el job declara `environment: staging`, lo que además habilita incorporar una aprobación manual en el futuro si se decidiera.
 
 La mayoría de los workflows finaliza con un health check: un bucle de 12 intentos cada 5 segundos (un minuto en total) que consulta el endpoint `/readyz` o `/livez` del servicio. Si no responde de forma saludable dentro de ese minuto, el deploy se marca como fallido.
+
+---
+
+## Por qué un VPS
+
+La elección de un VPS por sobre una solución cloud respondió a varias razones. En lo económico, ofrecía un costo fijo y predecible, con control total sobre el gasto. En lo técnico, permitió ejecutar las pruebas de volumen directamente contra la aplicación desplegada, en lugar de hacerlo sobre contenedores locales que no reflejan las condiciones reales. Y a nivel formativo, configurar y asegurar el servidor resultó un ejercicio práctico de seguridad informática, orientado a proteger el entorno. Por último, la IP fija asignada al servidor simplificó notablemente las tareas de configuración, en particular la del dominio.
