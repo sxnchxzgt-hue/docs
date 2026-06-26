@@ -132,10 +132,6 @@ El flujo `feature → dev → staging → main` funcionó bien en la práctica. 
 
 Haber invertido tiempo en los pipelines de CI desde el principio del proyecto pagó dividendos a lo largo de toda la cursada. La rama `main` nunca se rompió de forma imperceptible: cada fallo fue explícito y bloqueante. El episodio de agotamiento de minutos fue disruptivo, pero también demostró qué tan dependiente se había vuelto el equipo del CI — lo que es una señal positiva de que el proceso estaba arraigado.
 
-### Deuda técnica
-
-El proyecto tiene deuda técnica acotada y documentada. Los colores hardcodeados pendientes en la app móvil (tokens `stock-warning`, `error-surface`, `overlay`, `indicator-inactive`) están listados en la auditoría de UX. El escalado responsivo de tipografía en dispositivos pequeños tiene un fix identificado pero no aplicado (`Math.max(11, ...)` en el tier `xs` de `useResponsive.ts`). Esta deuda es cosmética y no afecta la funcionalidad.
-
 ### Documentación
 
 La documentación del proyecto mejoró notablemente en las etapas finales. Cada servicio tiene un README con endpoints, setup local, variables de entorno y guía de testing. El repo de docs centraliza la arquitectura, los seeds, las auditorías de UX/accesibilidad y los resultados de las pruebas de carga. El gap entre el código y la documentación es bajo al momento de la entrega final.
